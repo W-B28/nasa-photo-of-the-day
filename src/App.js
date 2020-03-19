@@ -5,6 +5,8 @@ import PhotoCard from "./components/PhotoCard";
 import styled from 'styled-components';
 
 function App() {
+
+
   return (
     <div className="App">
       <Header/>

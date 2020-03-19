@@ -22,11 +22,22 @@ export default function PhotoCard(){
 
     }, []);
 
+// styles
+    const PhotoCard = styled.div `
+      background-color: lightgray;
+      img {
+        width: 80vw;
+        margin-top: 8%;
+      }
+
+    `
+
+
     return (
 
-        <div className = "photo-card">
+        <PhotoCard>
 
-            <img src = {photoData.url} className = "space-img"/>
+            <img src = {photoData.url} className = "space-img" alt="NASA's image of the day"/>
 
             <Info
             title = {photoData.title}
@@ -35,7 +46,7 @@ export default function PhotoCard(){
             copyright = {photoData.copyright}
             />
 
-        </div>
+        </PhotoCard>
 
     )
 
