@@ -3,11 +3,16 @@ import axios from "axios";
 import styled from 'styled-components';
 import Info from "./Info";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from 'reactstrap';
+import { Button, Fade } from 'reactstrap';
 
 
 export default function PhotoCard(){
     const [photoData, setPhotoData] = useState({});
+    const [fade, setFade] = useState(false);
+
+    const toggle = () => setFade(!fade);
+
+
 
     useEffect(() => {
 
@@ -32,22 +37,21 @@ export default function PhotoCard(){
 
     `
 
-
     return (
-
+      // <>
         <PhotoCard>
-
+          <Fade in={fade} tag="h5">
             <img src = {photoData.url} className = "space-img" alt="NASA's image of the day"/>
-
+          </Fade>
             <Info
             title = {photoData.title}
             date = {photoData.date}
             explanation = {photoData.explanation}
             copyright = {photoData.copyright}
             />
-
+            <button color="primary" onClick={toggle} className="mb-3">Click For Image</button>
         </PhotoCard>
-
+      // </>
     )
 
 }
